@@ -1,4 +1,4 @@
-package com.yuriyyg.noteapp.presentation
+package com.yuriyyg.noteapp.presentation.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

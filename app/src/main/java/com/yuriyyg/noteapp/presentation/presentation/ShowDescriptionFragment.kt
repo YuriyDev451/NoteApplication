@@ -1,4 +1,4 @@
-package com.yuriyyg.noteapp.presentation
+package com.yuriyyg.noteapp.presentation.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

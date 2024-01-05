@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/addListItemFragment">
+
+    <fragment
+        android:id="@+id/addListItemFragment"
+        android:name="com.yuriyyg.noteapp.presentation.presentation.AddListItemFragment"
+        android:label="fragment_add_list_item"
+        tools:layout="@layout/fragment_add_list_item" >
+        <action
+            android:id="@+id/action_addListItemFragment_to_showNotesFragment"
+            app:destination="@id/showNotesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showDescriptionFragment"
+        android:name="com.yuriyyg.noteapp.presentation.presentation.ShowDescriptionFragment"
+        android:label="fragment_show_description"
+        tools:layout="@layout/fragment_show_description" />
+    <fragment
+        android:id="@+id/showNotesFragment"
+        android:name="com.yuriyyg.noteapp.presentation.presentation.ShowNotesFragment"
+        android:label="fragment_show_notes"
+        tools:layout="@layout/fragment_show_notes" >
+
+        <action
+        android:id="@+id/action_show_to_add"
+        app:destination="@id/addListItemFragment"
+        />
+        <action
+            android:id="@+id/action_show_to_description"
+            app:destination="@+id/showDescriptionFragment"
+            />
+
+    </fragment>
+</navigation>

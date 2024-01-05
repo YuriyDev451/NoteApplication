@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.yuriyyg.noteapp.presentation.presentation.AddListItemViewModel" />
+    </data>
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.AddListItemFragment">
+    tools:context=".presentation.presentation.AddListItemFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:background="#474D59"
@@ -37,6 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Title"
+                android:text="@={viewModel.title}"
                 android:textStyle="bold"
                 android:textSize="25sp"/>
 
@@ -57,15 +68,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Description"
+                android:text="@={viewModel.description}"
                 android:textSize="25sp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floating_action_button"
+            android:id="@+id/add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
             android:layout_margin="20dp"
             android:backgroundTint="#A3ACBF"
             android:contentDescription="null"
@@ -74,3 +85,4 @@
             app:srcCompat="@drawable/ic_add_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
+</layout>
