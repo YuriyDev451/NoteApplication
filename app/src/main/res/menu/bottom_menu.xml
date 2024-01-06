@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+    android:id="@+id/showNotesFragment"
+    android:icon="@drawable/ic_edit_icon"
+    android:title="@string/nav_menu_home">
+    </item>
+    <item
+        android:id="@+id/addListItemFragment"
+        android:icon="@drawable/ic_add_plus_new_icon"
+        android:title="@string/nav_menu_add">
+    </item>
+</menu>

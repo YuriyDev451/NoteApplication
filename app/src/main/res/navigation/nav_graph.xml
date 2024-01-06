@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/addListItemFragment">
+    app:startDestination="@id/showNotesFragment">
 
     <fragment
         android:id="@+id/addListItemFragment"
@@ -13,12 +16,28 @@
         <action
             android:id="@+id/action_addListItemFragment_to_showNotesFragment"
             app:destination="@id/showNotesFragment" />
+        <argument
+            android:name="update"
+            app:argType="boolean" />
+        <argument
+            android:name="itemId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="note"
+            app:argType="com.yuriyyg.noteapp.presentation.data.NotesDbModel"
+            app:nullable="true"/>
+
     </fragment>
     <fragment
         android:id="@+id/showDescriptionFragment"
         android:name="com.yuriyyg.noteapp.presentation.presentation.ShowDescriptionFragment"
         android:label="fragment_show_description"
-        tools:layout="@layout/fragment_show_description" />
+        tools:layout="@layout/fragment_show_description" >
+        <argument
+            android:name="description"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/showNotesFragment"
         android:name="com.yuriyyg.noteapp.presentation.presentation.ShowNotesFragment"
@@ -36,3 +55,4 @@
 
     </fragment>
 </navigation>
+

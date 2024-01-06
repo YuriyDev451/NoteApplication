@@ -2,4 +2,12 @@
     <string name="app_name">NoteApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_note_tv">Add note</string>
+    <string name="hint_edittext_title">Title</string>
+    <string name="hint_edittext_description">Description</string>
+    <string name="button_for_add_or_edit_note">Button for add or edit note</string>
+    <string name="show_description_tv">Description</string>
+    <string name="button_for_add_note">Button for add note</string>
+    <string name="nav_menu_home">Show list</string>
+    <string name="nav_menu_add">Add note</string>
 </resources>

@@ -5,23 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import com.yuriyyg.noteapp.R
 import com.yuriyyg.noteapp.databinding.ListItemBinding
 import com.yuriyyg.noteapp.presentation.data.NotesDbModel
 
-//import com.example.navigationapp.R
-//import com.example.navigationapp.databinding.ListItemBinding
+
+class ListAdapter(
+    val context: Context,
+    private var notes: MutableList<NotesDbModel>,
+    var onClick: (NotesDbModel) -> Unit,
+    var onDeleteClick: (NotesDbModel) -> Unit,
+    var onEditClick: (NotesDbModel) -> Unit
+) : BaseAdapter(){
 
 
-class ListAdapter(val context: Context, private var notes: MutableList<NotesDbModel>, var onClick: (NotesDbModel) -> Unit) : BaseAdapter(){
-
-
-//        fun addNewItem(newData: Colors) {
-//            productList.clear()
-//            productList.add(newData)
-//            notifyDataSetChanged()
-//        }
 
     fun addNewItem(newNote: List<NotesDbModel>) {
         // Mevcut ürün listesini temizle ve yeni ürünleri ekleyerek güncelle
@@ -58,7 +57,7 @@ class ListAdapter(val context: Context, private var notes: MutableList<NotesDbMo
 
 
             newConvertView = binding.root
-            holder = ViewHolder(binding, onClick)
+            holder = ViewHolder(binding,  onClick, onDeleteClick,onEditClick )
             holder.bind(notes[position])
 
             newConvertView?.tag = holder
@@ -70,26 +69,40 @@ class ListAdapter(val context: Context, private var notes: MutableList<NotesDbMo
             holder.bind(notes[position])
         }
 
+
+
+
         return newConvertView!!
     }
 
-    private class ViewHolder(var binding: ListItemBinding, var onClick: (NotesDbModel) -> Unit) {
+    private class ViewHolder(var binding: ListItemBinding,
+                             var onClick: (NotesDbModel) -> Unit,
+                             var onDeleteClick: (NotesDbModel) -> Unit,
+                             var onEditClick: (NotesDbModel) -> Unit) {
+
+
         fun bind(note: NotesDbModel){
 
-//            binding.textView.text = color.name
-//            binding.textView2.text = color.count
+
 
             binding.tvTitle.text = note.title
             binding.tvDescription.text = note.description
           //  binding.product = color
 
-            binding.deleteButton.setOnClickListener {
 
+            // Обработчик нажатия на кнопку удаления
+            binding.deleteButton.setOnClickListener {
+                onDeleteClick(note)
             }
 
-            binding.root.setOnClickListener {
-               // onClick(binding.product as NotesDbModel)
+            // Обработчик нажатия на кнопку редактирования
+            binding.editButton.setOnClickListener {
+                onEditClick(note)
+            }
 
+            //Обработчик нажатия на весь элемент
+            binding.root.setOnClickListener {
+                onClick(note)
 
             }
         }

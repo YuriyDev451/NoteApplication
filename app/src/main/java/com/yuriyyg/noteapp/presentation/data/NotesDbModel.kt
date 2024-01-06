@@ -15,4 +15,11 @@ data class NotesDbModel(
     val title:String?,
     @ColumnInfo(name = "description")
     val description: String?
-):Parcelable
+):Parcelable{
+    companion object {
+        @JvmStatic
+        fun getDefault(): NotesDbModel {
+            return NotesDbModel(0, "", "")
+        }
+    }
+}

@@ -11,25 +11,6 @@ import java.security.AccessControlContext
 abstract class AppDatabase : RoomDatabase() {
     abstract fun notesDao(): NotesDao
 
-    companion object {
-        private var INSTANCE: AppDatabase? = null
 
-        fun getData(context: Context): AppDatabase {
-            if (INSTANCE != null) {
-                return INSTANCE!!
-            } else {
-                val instance = Room
-                    .databaseBuilder(
-                        context,
-                        AppDatabase::class.java,
-                        "database"
-                    )
-                    .build()
-
-                INSTANCE = instance
-                return INSTANCE!!
-            }
-        }
-    }
 
 }
