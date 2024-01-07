@@ -23,6 +23,7 @@ class AddListItemFragment : Fragment() {
 
 
     lateinit var binding: FragmentAddListItemBinding
+
      val viewModel: AddListItemViewModel by viewModels()
 
     private val args: AddListItemFragmentArgs by navArgs()
@@ -35,12 +36,11 @@ class AddListItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentAddListItemBinding.inflate(inflater)
-        //viewModel= ViewModelProvider(this)[AddListItemViewModel::class.java]
+
 
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        //viewModel.repository = (activity?.application as MyApplication).repository
 
 
         val isUpdate = args.update

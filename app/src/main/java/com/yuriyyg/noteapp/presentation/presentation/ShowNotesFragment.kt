@@ -34,12 +34,12 @@ class ShowNotesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentShowNotesBinding.inflate(inflater)
-       // viewModel= ViewModelProvider(this)[ShowNotesViewModel::class.java]
+
 
         binding.lifecycleOwner = viewLifecycleOwner
 
 
-       // viewModel.repository = (activity?.application as MyApplication).repository
+
 
 
 

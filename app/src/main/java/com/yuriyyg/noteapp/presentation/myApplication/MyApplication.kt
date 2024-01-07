@@ -9,8 +9,6 @@ import dagger.hilt.android.HiltAndroidApp
 class MyApplication: Application() {
 
 
-//    val database by lazy { AppDatabase.getData(this) }
-//    val repository by lazy {NoteRepository(database.notesDao())}
 
     override fun onCreate() {
         super.onCreate()
