@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import javax.inject.Inject
 
 
-interface NoteRepositoryInterface
+ interface NoteRepositoryInterface
 
 class NoteRepository @Inject constructor(private val notesDao: NotesDao): NoteRepositoryInterface {
 

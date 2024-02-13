@@ -19,7 +19,7 @@ class ShowNotesViewModel @Inject constructor( var repository: NoteRepository):Vi
 
     fun delete(note: NotesDbModel){
         viewModelScope.launch {
-            repository.delete(note)
+             repository.delete(note)
         }
 
     }
